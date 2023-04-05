@@ -1,0 +1,141 @@
+#include "pch.h"
+#include <iostream>
+
+using namespace std;
+
+// --------------------------------------------ejercicio 2 - hoja 2
+//void printNumbers(int current, int maximum) {
+//    if (current > maximum) {
+//        return;
+//    }
+//    cout << current;
+//    printNumbers(current+1, maximum);
+//}
+//
+//void printPattern(int n) {
+//    if (n == 6) {
+//        return;
+//    }
+//    printNumbers(1, n);
+//    cout << endl;
+//    printPattern(n+1);
+//}
+//
+//int main() {
+//    int n = 0;
+//    printPattern(n);
+//    return 0;
+//}
+
+// --------------------------------------------ejercicio 3
+//template <typename T>
+//void printArray(T arr[], int size) {
+//    if (size == 0) {
+//        return;
+//    }
+//    cout << arr[0] << " ";
+//    printArray(arr + 1, size - 1);
+//}
+//
+//int main() {
+//    int arr[] = { 1, 2, 3, 4, 5 };
+//    int size = sizeof(arr) / sizeof(arr[0]);
+//    printArray(arr, size);
+//    return 0;
+//}
+
+// ---------------------------------- ejercicio 4
+//double power(double base, int exponent) {
+//    if (exponent == 0) {
+//        return 1;
+//    }
+//    else if (exponent < 0) {
+//        return 1 / power(base, -exponent);
+//    }
+//    else if (exponent % 2 == 0) {
+//        double result = power(base, exponent / 2);
+//        return result * result;
+//    }
+//    else {
+//        return base * power(base, exponent - 1);
+//    }
+//}
+//
+//int main() {
+//    double base;
+//    int exponent;
+//    cout << "Ingrese la base: ";
+//    cin >> base;
+//    cout << "Ingrese el exponente: ";
+//    cin >> exponent;
+//    double result = power(base, exponent);
+//    cout << base << "^" << exponent << " = " << result << endl;
+//    return 0;
+//}
+
+// ------------ ejercicio 5
+//int sum(int n) {
+//    if (n == 0) {
+//        return 0;
+//    }
+//    return n + sum(n - 1);
+//}
+//
+//int main() {
+//    int n;
+//    cout << "Ingrese un número natural: ";
+//    cin >> n;
+//    int result = sum(n);
+//    cout << "La suma de los " << n << " primeros números naturales es: " << result << endl;
+//    return 0;
+//}
+
+// ------------------------------ ejercicio 6
+//#include <iostream>
+//using namespace std;
+//
+//void showDigits(int n) {
+//    if (n < 10) {
+//        cout << n << endl;
+//    }
+//    else {
+//        showDigits(n / 10);
+//        cout << n % 10 << endl;
+//    }
+//}
+//
+//int main() {
+//    int n;
+//    cout << "Ingrese un número entero de 4 cifras: ";
+//    cin >> n;
+//    if (n < 1000 || n > 9999) {
+//        cout << "El número ingresado no es de 4 cifras." << endl;
+//        return 1;
+//    }
+//    cout << "Las cifras del número " << n << " son:" << endl;
+//    showDigits(n);
+//    return 0;
+//}
+
+// ------------------------------ ejercicio 7
+//void drawRectangle(int base, int height) {
+//    if (height == 0) {
+//        return;
+//    }
+//    for (int i = 0; i < base; i++) {
+//        cout << "*";
+//    }
+//    cout << endl;
+//    drawRectangle(base, height - 1);
+//}
+//
+//int main() {
+//    int base, height;
+//    cout << "Ingrese la base del rectángulo: ";
+//    cin >> base;
+//    cout << "Ingrese la altura del rectángulo: ";
+//    cin >> height;
+//    cout << endl;
+//    drawRectangle(base, height);
+//    return 0;
+//}
