@@ -19,11 +19,16 @@ void binario(int n){
     }
     binario(n>>1);
 }
+void Ejercicio1(){
+    int n;
+    cin>>n;
+}
 int main(){
     int num;
     cout<<"Ingrese un numero: ";
     cin>>num;
     cout<<(1&1);
+    Ejercicio1();
     //binario(num);
     return 0;
 }
