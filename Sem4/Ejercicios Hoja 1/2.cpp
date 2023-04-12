@@ -21,12 +21,12 @@ class Nodo{
 template<typename G>
 class Cola{
     private:
-        Nodo* cola;
-        Nodo* fondo;    
+        Nodo<G>* cola;
+        Nodo<G>* fondo;    
     public:
         Cola(){cola = NULL;}
         void push(G v){
-            Nodo *aux = new Nodo(v, NULL);
+            Nodo<G> *aux = new Nodo<G>(v, NULL);
             if(isEmpty()){
                 cola = aux;
                 fondo = aux;
@@ -43,14 +43,14 @@ class Cola{
             return valor;
         }
         void mostrar(){
-            Nodo* aux = cola;
+            Nodo<G>* aux = cola;
             while (aux !=NULL){
                 cout<<aux->getValor()<<" ";
                 aux = aux->getSiguiente();
             }
         }
         bool isEmpty(){
-            if(cola == NULL) return 1;S
+            if(cola == NULL) return 1;
             else return 0;
         }
 };
@@ -66,7 +66,7 @@ int main(){
     cout<<cola.isEmpty()<<endl;
     cola.pop();
     cola.pop();
-    cola.pop();
+    cola.mostrar();
     cola.pop();
     cola.pop();
     cout<<cola.isEmpty()<<endl;
