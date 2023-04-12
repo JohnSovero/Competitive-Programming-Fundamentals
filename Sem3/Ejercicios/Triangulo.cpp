@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template<class T>
+template<class int>
 class Triangulo{
     public:
-    T base, altura;
+    int base, altura;
 
-    Triangulo(T base, T altura): base(base), altura(altura)
+    Triangulo(int base, int altura): base(base), altura(altura)
     {}
-    T hallarArea(){
+    int hallarArea(){
         return (this->base*this->altura)/2;
     }
     ~Triangulo(){}

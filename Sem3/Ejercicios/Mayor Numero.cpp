@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-template <typename T>
+template <typename int>
 
-T mayorNumero(T a, T b){
+int mayorNumero(int a, int b){
     return a>b ? a:b;
 }
 
