@@ -16,6 +16,10 @@ public:
     }
     T getValor() { return valor; }
     Nodo *getSiguiente() { return sig; }
+    Nodo *setSiguiente(Nodo *sig)
+    {
+        sig = sig;
+    }
 };
 
 template <typename G>
@@ -56,18 +60,28 @@ public:
             return 0;
     }
 };
+
 int main()
 {
-    Pila<int> pila;
-    pila.push(20);
-    pila.push(10);
-    pila.push(15);
-    pila.mostrar();
-    cout << endl;
-    cout << pila.isEmpty() << endl;
-    pila.pop();
-    pila.pop();
-    pila.pop();
-    cout << pila.isEmpty() << endl;
+    int n = 100;
+    int arr[n];
+    do
+    {
+        cout << "Ingrese la cantidad de elementos: ";
+        cin >> n;
+    } while (n < 1 || n > 45);
+    for (int i = 0; i < n; i++)
+    {
+        if (i == 0)
+            arr[0] = 0;
+        else if (i == 1)
+            arr[1] = 1;
+        else
+        {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+    }
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
     return 0;
 }

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template<class int>
+template<class T>
 class Triangulo{
     public:
     int base, altura;

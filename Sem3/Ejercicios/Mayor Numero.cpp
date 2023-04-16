@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-template <typename int>
+template <typename T>
 
 int mayorNumero(int a, int b){
     return a>b ? a:b;

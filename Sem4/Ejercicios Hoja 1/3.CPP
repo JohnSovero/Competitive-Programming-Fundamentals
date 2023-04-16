@@ -1,69 +1,88 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template<typename T>
-class Nodo{
-    private:
-        T valor;
-        Nodo* siguiente;
-    public:
-        Nodo(T v, Nodo *sig){
-            valor = v;
-            siguiente = sig;
-        }
-    T getValor(){ return valor; }
-    Nodo *getSiguiente(){ return siguiente;}
-    Nodo *setSiguiente(Nodo* sig){
-        siguiente = sig;
+template <typename T>
+class Nodo
+{
+private:
+    T valor;
+    Nodo *sig;
+
+public:
+    Nodo(T v, Nodo *sig)
+    {
+        valor = v;
+        sig = sig;
+    }
+    T getValor() { return valor; }
+    Nodo *getSiguiente() { return sig; }
+    Nodo *setSiguiente(Nodo *sig)
+    {
+        sig = sig;
     }
 };
 
-template<typename G>
-class Cola{
-    private:
-        Nodo<G>* cola;
-        Nodo<G>* fondo;    
-    public:
-        Cola(){cola = NULL, fondo = NULL;}
-        void push(G v){
-            Nodo<G> *aux = new Nodo<G>(v, NULL);
-            if(isEmpty()){
-                cola = aux;
-                fondo = aux;
-            }
-            else{
-                fondo->setSiguiente(aux);
-                fondo = aux;
-            }
+template <typename G>
+class Cola
+{
+private:
+    Nodo<G> *inicio;
+    Nodo<G> *fin;
+
+public:
+    Cola() { inicio = NULL, fin = NULL; }
+    void push(G v)
+    {
+        Nodo<G> *aux = new Nodo<G>(v, NULL);
+        if (isEmpty())
+        {
+            inicio = aux;
+            fin = aux;
         }
-        G pop(){
-            if(cola == NULL) return 0;
-            G valor = cola->getValor();
-            cola = cola->getSiguiente();
-            return valor;
+        else
+        {
+            fin->setSiguiente(aux);
+            fin = aux;
         }
-        void mostrar(){
-            Nodo<G>* aux = cola;
-            while (aux !=NULL){
-                cout<<aux->getValor()<<" ";
-                aux = aux->getSiguiente();
-            }
+    }
+    G pop()
+    {
+        if (inicio == NULL)
+            return 0;
+        G valor = inicio->getValor();
+        inicio = inicio->getSiguiente();
+        return valor;
+    }
+    void mostrarTodo()
+    {
+        Nodo<G> *aux = inicio;
+        while (aux != NULL)
+        {
+            cout << aux->getValor() << " ";
+            aux = aux->getSiguiente();
         }
-        bool isEmpty(){
-            if(cola == NULL) return 1;
-            else return 0;
-        }
+    }
+    bool isEmpty()
+    {
+        if (inicio == NULL)
+            return 1;
+        else
+            return 0;
+    }
 };
 
-Cola<int> crearColaMultiplicada(Cola<int>& a, Cola<int>& b){
+Cola<int> crearColaMultiplicada(Cola<int> &a, Cola<int> &b)
+{
     Cola<int> cola_resultado;
-    while(!(a.isEmpty())){
+    while (!(a.isEmpty()))
+    {
         int aux = a.pop() * b.pop();
         cola_resultado.push(aux);
     }
     return cola_resultado;
-} 
-int main(){
+}
+int main()
+{
     Cola<int> cola_A, cola_B;
     cola_A.push(2);
     cola_A.push(5);
@@ -76,7 +95,7 @@ int main(){
     cola_B.push(3);
 
     Cola<int> nueva = crearColaMultiplicada(cola_A, cola_B);
-    nueva.mostrar();
+    nueva.mostrarTodo();
 
     return 0;
 }
