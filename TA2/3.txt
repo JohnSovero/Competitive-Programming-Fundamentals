@@ -1,0 +1,33 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    vector<int> v;
+    for (int i = 0; i<n; i++) {
+        int x;
+        cin>> x;
+        v.push_back(x);
+    }
+    int q;
+    cin>>q;
+    for (int i = 0; i<q; i++){
+        int y;
+        cin>>y;
+        vector<int>::iterator low;
+        low = lower_bound(v.begin(), v.end(), y);
+        int pos = (low - v.begin());
+        
+        if(v[pos] == y){
+            cout<<"Yes "<<pos+1;
+        }
+        else{
+            cout<<"No "<<pos+1;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
