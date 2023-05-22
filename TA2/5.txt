@@ -1,0 +1,29 @@
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int q;
+    cin>>q;
+    map<string, int> m;
+    for (int i= 0; i < q; i++) {
+        int x;
+        string nombre;
+        cin>>x>>nombre;
+        if(x == 1){
+            int nota;
+            cin>>nota;
+            m[nombre] = m[nombre] + nota;
+        }
+        else if(x == 2){
+            m.erase(nombre);
+        }
+        else if(x == 3){
+            cout<<m[nombre]<<endl;
+        }
+    }
+}
